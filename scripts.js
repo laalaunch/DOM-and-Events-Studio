@@ -9,9 +9,20 @@ function takeOff() {
         document.getElementById("spaceShuttleHeight").innerHTML = 10000;
     }
 }
-function land() {
+
+function landing() {
     window.alert("The shuttle is landing. Landing gear engaged.");
     document.getElementById("flightStatus").innerHTML = "The shuttle has landed.";
     document.getElementById("shuttleBackground").style.backgroundColor = "green";
     document.getElementById("spaceShuttleHeight").innerHTML = 0;
+}
+
+function missionAbort() {
+    let shouldAbort = window.confirm("Confirm that you want to abort the mission.")
+    if (shouldAbort) {
+        document.getElementById("missionAbort").innerHTML;
+        document.getElementById("flightStatus").innerHTML = "Mission Aborted";
+        document.getElementById("shuttleBackground").style.backgroundColor = "green";
+        document.getElementById("spaceShuttleHeight").innerHTML = 0;
+    }
 }
