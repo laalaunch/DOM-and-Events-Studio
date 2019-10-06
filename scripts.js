@@ -26,3 +26,65 @@ function missionAbort() {
         document.getElementById("spaceShuttleHeight").innerHTML = 0;
     }
 }
+
+
+// function moveRocket(str) {
+//     let xPos = 0;
+//     document.getElementById("rocket").style.position = "relative";
+//     switch(str) {
+//         case "down":
+//             xPos += 10;
+//             document.getElementById('rocket').style.top = xPos + "px";
+//             document.getElementById("spaceShuttleHeight").innerHTML = 0;
+//             break;
+
+//         case "up":
+//             xPos -= 10;
+//             document.getElementById('rocket').style.top = xPos + "px";
+//             document.getElementById("spaceShuttleHeight").innerHTML = 10000;
+//             break;
+
+//         case "left" :
+//             xPos -= 10;
+//             document.getElementById("rocket").style.left = xPos + "px";
+//             break;
+
+//         case "right" :
+//             xPos += 10;
+//             document.getElementById("rocket").style.left = xPos + "px";
+//             break;
+//     }
+// }
+
+let xPos = 0;
+let addHeight = 0;
+let decreaseHeight = 0;
+
+function moveRocket() {
+    let rocket = document.getElementById("rocket");
+    document.getElementById("rocket").style.position = "relative";
+    addHeight += 10000;
+    decreaseHeight -= 10000;
+
+    upBtn.addEventListener('click', function(e) {
+        xPos -= 10;
+        rocket.style.top = xPos + "px";
+        document.getElementById("spaceShuttleHeight").innerHTML = addHeight;
+    });
+
+    downBtn.addEventListener('click', function(e) {
+        xPos += 10;
+        rocket.style.top = xPos + "px";
+        document.getElementById("spaceShuttleHeight").innerHTML = decreaseHeight;
+    });
+
+    rightBtn.addEventListener('click', function(e) {
+        xPos += 10;
+        rocket.style.left = xPos + "px";
+    });
+
+    leftBtn.addEventListener('click', function(e) {
+        xPos -= 10;
+        rocket.style.left = xPos + "px";
+    });
+}
